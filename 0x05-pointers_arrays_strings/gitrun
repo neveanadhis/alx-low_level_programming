@@ -1,0 +1,22 @@
+#!/bin/bash
+git add .
+
+echo ""
+echo ""
+
+echo  "Commit message"
+read mess
+
+git commit -m "$mess"
+
+echo " "
+echo " "
+
+git push
+
+echo " "
+echo " "
+
+Local repo has been repo
+
+echo " "
