@@ -1,29 +1,27 @@
 #include "main.h"
-/**
- * _strspn - entry point
- * @s: pointer
- * @accept: pointer
- * Return: always 0
- */
-unsigned int _strspn(char *s, char *accept)
-{
-	unsigned int i, n, value;
+#include <stddef.h>
 
-	value = 0;
-	for (i = 0; s[i] != '\0'; i++)
+/**
+ * _strpbrk - Searches a string for any of a set of bytes.
+ * @s: The string to search.
+ * @accept: The string containing bytes to search for.
+ *
+ * Return: A pointer to the byte in s that matches one of the bytes in accept,
+ * or NULL if no such byte is found.
+ */
+char *_strpbrk(char *s, char *accept)
+{
+	while (*s)
 	{
-		for (n = 0; accept[n] != '\0'; n++)
-		{
-			if (accept[n] == s[i])
-			{
-				value++;
-				break;
-			}
-		}
-		if (accept[n] == '\0')
-		{
-			break;
-		}
+	char *a = accept;
+
+	while (*a)
+	{
+	if (*s == *a)
+	return (s);
+	a++;
 	}
-	return (value);
+	s++;
+	}
+	return (NULL);
 }
