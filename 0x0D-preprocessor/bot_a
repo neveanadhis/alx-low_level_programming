@@ -1,0 +1,16 @@
+#!/bin/bash
+
+echo " "
+
+echo "Enter file name to pass it to betty and compile"
+
+echo "File name : "
+read fi
+
+echo " "
+betty $fi
+
+echo " "
+echo "Now compiling..."
+echo " "
+gcc -Wall -pedantic -Werror -Wextra -std=gnu89 $fi 
