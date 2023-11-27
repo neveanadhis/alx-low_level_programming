@@ -1,0 +1,37 @@
+#!/bin/bash
+
+echo "Enter filename(s)  to compile:_"
+read ff
+echo " "
+echo "------------"
+echo " "
+echo "Do you want to compile it to a new name using flag -o:  (y/n)"
+read ans
+echo " "
+echo "------------"
+
+if [ ans = "y" ]
+then
+    echo "Ok, compiling -- new name please:__"
+    read new
+    gcc -Wall -pedantic -Werror -Wextra -std=gnu89 $ff  -o $new
+    echo " "
+    echo "-------"
+    echo " "
+    echo "Done..."
+
+elif [ ans = "n" ]
+then
+    echo "ok, no new name : default:- a.out"
+    gcc -Wall -pedantic -Werror -Wextra -std=gnu89 $ff
+    echo " "
+    echo "----------"
+    echo " "
+    echo "Done.."
+
+else
+    echo "Error: Please y or n.."
+    exit 1
+
+fi
+    
